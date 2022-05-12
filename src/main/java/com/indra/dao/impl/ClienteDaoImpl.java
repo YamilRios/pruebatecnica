@@ -46,10 +46,10 @@ public class ClienteDaoImpl implements ClienteDao {
 				
 				StringBuilder stringBuilderSql2 = new StringBuilder();
 				stringBuilderSql2.append(" SELECT A.numero_telefono, A.estado_linea, A.nombre_plan, A.tipo_linea, A.codigo_cliente_fk.codigo_cliente FROM LineaMovil A");
-				stringBuilderSql2.append(" WHERE A.codigo_cliente_fk.codigo_cliente = 4 ");
+				stringBuilderSql2.append(" WHERE A.codigo_cliente_fk.codigo_cliente = :codCliente ");
 				
 				Query query2 = em.createQuery(stringBuilderSql2.toString());
-				//query2.setParameter("codCliente", result.getCodigo_cliente());
+				query2.setParameter("codCliente", result.getCodigo_cliente());
 				
 				List<LineaMovil> lis =  query2.getResultList();
 				result.setLineasMoviles(lis);
@@ -61,61 +61,10 @@ public class ClienteDaoImpl implements ClienteDao {
 			    
 				
 				Query query3 = em.createQuery(stringBuilderSql3.toString());
+				//query2.setParameter("codCliente", result.getCodigo_cliente());
 				List<LineaMovilOfertaTo> lstLmoTo =  query3.getResultList();
 				result.setOfertas(lstLmoTo);
-				//e.getLineasMoviles().forEach(x -> result.getLineasMoviles().add(x));
 				
-				
-				/*
-				StringBuilder stringBuilderSql2 = new StringBuilder();
-				stringBuilderSql2.append(" SELECT E FROM Cliente E");
-				stringBuilderSql2.append(" WHERE E.numero_documento = :numeroDocumento ");
-				stringBuilderSql2.append(" AND E.tipo_documento.description = :tipoDocumentoDescripcion");
-				TypedQuery<Cliente> query2 = em.createQuery(stringBuilderSql2.toString(), Cliente.class);
-				query2.setParameter("numeroDocumento", clienteTo.getNumero_documento());
-				query2.setParameter("tipoDocumentoDescripcion", clienteTo.getTipo_documento());
-				
-				Cliente e = (Cliente) query.getSingleResult();
-				ClienteTo result = new ClienteTo();
-				System.out.println(e.toString());
-				result.setNumero_documento(e.getNumero_documento());
-				result.setTipo_documento(e.gettipo_documento().getDescription());
-				//result.setOfertas(e.getLineasMoviles().g);
-				/*
-				result.setIdEmployeePk(e.getIdEmployeePk());
-				result.setBirthDate(e.getBirthDate());
-				result.setCellphoneNumber(e.getCellphoneNumber());
-				result.setCivilStatus(e.getCivilStatus());
-				result.setDocumentNumber(e.getDocumentNumber());
-				result.setDocumentType(e.getDocumentType());
-				result.setEmail(e.getEmail());
-				result.setEmployeePhoto(e.getEmployeePhoto());
-				result.setFirstLastName(e.getFirstLastName());
-				result.setName(e.getName());
-				result.setProfession(e.getProfession());
-				result.setSecondLastName(e.getSecondLastName());
-				result.setSex(e.getSex());
-				result.setState(e.getState());
-				result.setUserName(e.getUserName());
-				result.setPassword(e.getPassword());
-				result.setIndManager(e.getIndManager());
-				result.setIndCustomer(e.getIndCustomer());
-				
-				if(e.getOrganizations()!=null){
-					
-					result.setOrganizationTo(e.getOrganizations());
-				}
-					
-				
-				List<Address> baseEntityList = getListAddress(result.getOrganizationTo().getIdOrganizationPk());
-				List<AddressTo> entityToList = new ArrayList<>();
-				if(baseEntityList!=null){
-					for(Address whd : baseEntityList){
-						entityToList.add(new AddressTo().copyEntity(whd));
-					}
-					result.setAddresses(entityToList);
-				}
-				*/
 				
 				return result;
 			}  catch (NoResultException ex) {
@@ -125,36 +74,4 @@ public class ClienteDaoImpl implements ClienteDao {
 				return null;
 			}	
 		}
-
-	/*
-		@Override
-		public List<Address> getListAddress(Long idOrganizationPk) throws Exception {
-			try{					
-				StringBuilder stringBuilderSql = new StringBuilder();
-				stringBuilderSql.append(" SELECT E FROM Address E");
-				stringBuilderSql.append(" WHERE E.organization.idOrganizationPk =:idOrganizationPk ");
-				stringBuilderSql.append(" AND E.indActive =:indActive ");
-				stringBuilderSql.append(" ORDER BY E.idAddressPk ASC ");
-				
-				TypedQuery<Address> query = em.createQuery(stringBuilderSql.toString(),Address.class);
-							
-				if(Validations.validateIsNotNullAndNotEmpty(idOrganizationPk)){
-					query.setParameter("idOrganizationPk", idOrganizationPk);	
-				}
-				query.setParameter("indActive", 1);	
-					
-				
-				List<Address> listResponse = query.getResultList();
-				return listResponse;
-			
-			} catch (NoResultException ex) {
-				return null;
-			} catch (NonUniqueResultException ex) {
-				return null;
-			}
-		}
-
-		return null;
-	}
-*/
 }

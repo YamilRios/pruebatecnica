@@ -7,9 +7,9 @@ import java.util.List;
 import com.indra.model.LineaMovil;
 
 public class OfertaTo {
-	private String codigo_oferta;
+	private Long codigo_oferta;
 	
-	private String descripcion_oferta;
+	private Long descripcion_oferta;
 	
 	private Date fecha_inicio;
 	
@@ -19,7 +19,7 @@ public class OfertaTo {
     
 	private Date fecha_oferta;
 	
-	public OfertaTo(String codigo_oferta, String descripcion_oferta, Date fecha_inicio, Date fecha_oferta,
+	public OfertaTo(Long codigo_oferta, Long descripcion_oferta, Date fecha_inicio, Date fecha_oferta,
 			List<LineaMovil> lineamovil_fk) {
 		super();
 		this.codigo_oferta = codigo_oferta;
@@ -33,16 +33,16 @@ public class OfertaTo {
 		super();
 	}
 
-	public String getCodigo_oferta() {
+	public Long getCodigo_oferta() {
 		return codigo_oferta;
 	}
-	public void setCodigo_oferta(String codigo_oferta) {
+	public void setCodigo_oferta(Long codigo_oferta) {
 		this.codigo_oferta = codigo_oferta;
 	}
-	public String getDescripcion_oferta() {
+	public Long getDescripcion_oferta() {
 		return descripcion_oferta;
 	}
-	public void setDescripcion_oferta(String descripcion_oferta) {
+	public void setDescripcion_oferta(Long descripcion_oferta) {
 		this.descripcion_oferta = descripcion_oferta;
 	}
 	public Date getFecha_inicio() {
