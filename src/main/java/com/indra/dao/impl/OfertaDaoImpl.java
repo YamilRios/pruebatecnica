@@ -70,14 +70,14 @@ public class OfertaDaoImpl implements OfertaDao {
 			
 		}
 		
-		List<LineaMovil> listaE = new ArrayList<LineaMovil>();
+		List<LineaMovilTo> listaE = new ArrayList<LineaMovilTo>();
 		for(RespuestaTo ro: respuestaTo) {
 			result.setCodigo_cliente(ro.getCodigo_cliente());
 			result.setNombre_completo(ro.getNombre_completo());
 			result.setTipo_documento(ro.getTipo_documento());
 			result.setNumero_documento(ro.getNumero_documento());
 			result.setFecha_nacimiento(ro.getFecha_nacimiento());
-			LineaMovil e = new LineaMovil();
+			LineaMovilTo e = new LineaMovilTo();
 			e.setEstado_linea(ro.getEstado_linea());
 			e.setNombre_plan(ro.getNombre_plan());
 			e.setNumero_telefono(ro.getNumero_telefono());

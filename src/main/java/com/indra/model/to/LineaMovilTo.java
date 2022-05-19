@@ -15,7 +15,9 @@ public class LineaMovilTo {
 	
 	private Long codigo_cliente_fk;
 	
-	private List<Oferta> oferta_fk;
+	private List<OfertaTo> ofertas;
+	
+	//private OfertaTo ofertaTo
 
 	
 	public LineaMovilTo() {
@@ -23,14 +25,24 @@ public class LineaMovilTo {
 	}
 
 	public LineaMovilTo(String numero_telefono, Long estado_linea, Long tipo_linea, Long nombre_plan,
-			Long codigo_cliente_fk, List<Oferta> oferta_fk) {
+			Long codigo_cliente_fk) {
 		super();
 		this.numero_telefono = numero_telefono;
 		this.estado_linea = estado_linea;
 		this.tipo_linea = tipo_linea;
 		this.nombre_plan = nombre_plan;
 		this.codigo_cliente_fk = codigo_cliente_fk;
-		this.oferta_fk = oferta_fk;
+	}
+
+	public LineaMovilTo(String numero_telefono, Long estado_linea, Long tipo_linea, Long nombre_plan,
+			Long codigo_cliente_fk, List<OfertaTo> ofertas) {
+		super();
+		this.numero_telefono = numero_telefono;
+		this.estado_linea = estado_linea;
+		this.tipo_linea = tipo_linea;
+		this.nombre_plan = nombre_plan;
+		this.codigo_cliente_fk = codigo_cliente_fk;
+		this.ofertas = ofertas;
 	}
 
 	public String getNumero_telefono() {
@@ -73,12 +85,12 @@ public class LineaMovilTo {
 		this.codigo_cliente_fk = codigo_cliente_fk;
 	}
 
-	public List<Oferta> getOferta_fk() {
-		return oferta_fk;
+	public List<OfertaTo> getofertas() {
+		return ofertas;
 	}
 
-	public void setOferta_fk(List<Oferta> oferta_fk) {
-		this.oferta_fk = oferta_fk;
+	public void setofertas(List<OfertaTo> ofertas) {
+		this.ofertas = ofertas;
 	}
 	
 	

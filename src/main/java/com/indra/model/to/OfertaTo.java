@@ -14,20 +14,20 @@ public class OfertaTo {
 	private Date fecha_inicio;
 	
 	private Date fecha_fin;
-	
-	private List<LineaMovil> lineamovil_fk = new ArrayList<LineaMovil>();
     
 	private Date fecha_oferta;
 	
-	public OfertaTo(Long codigo_oferta, Long descripcion_oferta, Date fecha_inicio, Date fecha_oferta,
-			List<LineaMovil> lineamovil_fk) {
+	
+	
+	public OfertaTo(Long codigo_oferta, Long descripcion_oferta, Date fecha_inicio, Date fecha_fin, Date fecha_oferta) {
 		super();
 		this.codigo_oferta = codigo_oferta;
 		this.descripcion_oferta = descripcion_oferta;
 		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
 		this.fecha_oferta = fecha_oferta;
-		this.lineamovil_fk = lineamovil_fk;
 	}
+
 	
 	public OfertaTo() {
 		super();
@@ -51,16 +51,21 @@ public class OfertaTo {
 	public void setFecha_inicio(Date fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-	public Date getfecha_oferta() {
-		return getfecha_oferta();
+
+	public Date getFecha_fin() {
+		return fecha_fin;
 	}
-	public void setfecha_oferta(Date fecha_oferta) {
+
+	public void setFecha_fin(Date fecha_fin) {
+		this.fecha_fin = fecha_fin;
+	}
+
+	public Date getFecha_oferta() {
+		return fecha_oferta;
+	}
+
+	public void setFecha_oferta(Date fecha_oferta) {
 		this.fecha_oferta = fecha_oferta;
 	}
-	public List<LineaMovil> getLineamovil_fk() {
-		return lineamovil_fk;
-	}
-	public void setLineamovil_fk(List<LineaMovil> lineamovil_fk) {
-		this.lineamovil_fk = lineamovil_fk;
-	}
+	
 }

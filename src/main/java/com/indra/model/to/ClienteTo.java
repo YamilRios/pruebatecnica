@@ -21,16 +21,14 @@ public class ClienteTo {
 	
 	private Date fecha_nacimiento;
 	
-	private List<LineaMovil> lineasMoviles = new ArrayList<LineaMovil>(); 
-	
-	private List<LineaMovilOfertaTo> ofertas = new ArrayList<LineaMovilOfertaTo>();
+	private List<LineaMovilTo> lineasMoviles = new ArrayList<LineaMovilTo>();
 	
 	
 	
 
 	public ClienteTo(Long codigo_cliente, String nombre_completo, Long tipo_documento,
 			String tipo_documento_descripcion, String numero_documento, Date fecha_nacimiento,
-			List<LineaMovil> lineasMoviles, List<LineaMovilOfertaTo> ofertas) {
+			List<LineaMovilTo> lineasMoviles) {
 		super();
 		this.codigo_cliente = codigo_cliente;
 		this.nombre_completo = nombre_completo;
@@ -39,7 +37,6 @@ public class ClienteTo {
 		this.numero_documento = numero_documento;
 		this.fecha_nacimiento = fecha_nacimiento;
 		this.lineasMoviles = lineasMoviles;
-		this.ofertas = ofertas;
 	}
 
 	public ClienteTo() {
@@ -52,14 +49,6 @@ public class ClienteTo {
 
 	public void setTipo_documento(Long tipo_documento) {
 		this.tipo_documento = tipo_documento;
-	}
-
-	public List<LineaMovilOfertaTo> getOfertas() {
-		return ofertas;
-	}
-
-	public void setOfertas(List<LineaMovilOfertaTo> ofertas) {
-		this.ofertas = ofertas;
 	}
 
 	public Long getCodigo_cliente() {
@@ -87,11 +76,11 @@ public class ClienteTo {
 		this.fecha_nacimiento = fecha_nacimiento;
 	}
 
-	public List<LineaMovil> getLineasMoviles() {
+	public List<LineaMovilTo> getLineasMoviles() {
 		return lineasMoviles;
 	}
 
-	public void setLineasMoviles(List<LineaMovil> lineasMoviles) {
+	public void setLineasMoviles(List<LineaMovilTo> lineasMoviles) {
 		this.lineasMoviles = lineasMoviles;
 	}
 

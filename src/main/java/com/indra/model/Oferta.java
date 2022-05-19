@@ -39,6 +39,19 @@ public class Oferta {
 	@Column(name = "FECHA_OFERTA")
 	private Date fecha_oferta;
 	
+	
+	
+	public Oferta(Long codigo_oferta, Long descripcion_oferta, Date fecha_inicio, Date fecha_fin,
+			List<com.indra.model.LineaMovilOferta> lstOfertas, Date fecha_oferta) {
+		super();
+		this.codigo_oferta = codigo_oferta;
+		this.descripcion_oferta = descripcion_oferta;
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
+		this.lstOfertas = lstOfertas;
+		this.fecha_oferta = fecha_oferta;
+	}
+
 	public Oferta(Long codigo_oferta, Long descripcion_oferta, Date fecha_inicio, Date fecha_oferta,
 			List<LineaMovilOferta> lstOfertas) {
 		super();
@@ -56,31 +69,50 @@ public class Oferta {
 	public Long getCodigo_oferta() {
 		return codigo_oferta;
 	}
+
 	public void setCodigo_oferta(Long codigo_oferta) {
 		this.codigo_oferta = codigo_oferta;
 	}
+
 	public Long getDescripcion_oferta() {
 		return descripcion_oferta;
 	}
+
 	public void setDescripcion_oferta(Long descripcion_oferta) {
 		this.descripcion_oferta = descripcion_oferta;
 	}
+
 	public Date getFecha_inicio() {
 		return fecha_inicio;
 	}
+
 	public void setFecha_inicio(Date fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-	public Date getfecha_oferta() {
-		return getfecha_oferta();
+
+	public Date getFecha_fin() {
+		return fecha_fin;
 	}
-	public void setfecha_oferta(Date fecha_oferta) {
-		this.fecha_oferta = fecha_oferta;
+
+	public void setFecha_fin(Date fecha_fin) {
+		this.fecha_fin = fecha_fin;
 	}
-	public List<LineaMovilOferta> getLineamovil_fk() {
+
+	public List<LineaMovilOferta> getLstOfertas() {
 		return lstOfertas;
 	}
-	public void LineaMovilOferta(List<LineaMovilOferta> lstOfertas) {
+
+	public void setLstOfertas(List<LineaMovilOferta> lstOfertas) {
 		this.lstOfertas = lstOfertas;
 	}
+
+	public Date getFecha_oferta() {
+		return fecha_oferta;
+	}
+
+	public void setFecha_oferta(Date fecha_oferta) {
+		this.fecha_oferta = fecha_oferta;
+	}
+
+	
 }
